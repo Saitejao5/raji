@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Rajeshwari</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-image: url('https://i.imgur.com/OiEmCXL.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100%;
+      background: url(IMG_20250516_214021.jpg);
+      overflow-x: hidden;
+    }
+
+    .reveal-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.8);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 9999;
+      flex-direction: column;
+    }
+
+    .reveal-container h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    .reveal-btn {
+      background-color: #ff69b4;
+      color: white;
+      font-size: 1.5rem;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .reveal-btn:hover {
+      background-color: #ff1493;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color: #ffffff;
+      text-shadow: 2px 2px 4px #00000070;
+    }
+
+    .music-control {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      z-index: 99;
+      display: none;
+    }
+
+    .scrapbook {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .photo-card {
+      width: 200px;
+      height: 260px;
+      perspective: 1000px;
+    }
+
+    .photo-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.8s;
+    }
+
+    .photo-card:hover .photo-inner {
+      transform: rotateY(180deg);
+    }
+
+    .photo-front, .photo-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border: 5px solid #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      background: #fff;
+      border-radius: 10px;
+    }
+
+    .photo-front img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .photo-back {
+      transform: rotateY(180deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.3rem;
+      background: #fffdf5;
+    }
+
+    .message-reveal {
+      max-width: 800px;
+      margin: 3rem auto;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 2rem;
+      border-radius: 20px;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      font-family: 'Open Sans', sans-serif;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .confetti, .emoji-blast {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal-container" id="intro-screen">
+    <h1>Click to Reveal the Surprise ✨</h1>
+    <button class="reveal-btn" onclick="startCelebration()">Open Scrapbook</button>
+  </div>
+
+  <div class="music-control" id="music-box">
+    <audio id="bg-music" loop>
+      <source src="https://www.bensound.com/bensound-music/bensound-sunny.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <div id="page-content" style="display:none">
+    <header>Happy Birthday Raji 🎉</header>
+
+    <div class="scrapbook">
+      <div class="photo-card">
+        <div class="photo-inner">
+          <div class="photo-front">
+            <img src="she3.jpg" alt="Memory 1">
+          </div>
+          <div class="photo-back">
+            i have written this for you "how could someone can be that much good,that much beautiful that much cute when they smile" my friend says the perfect girls never exist in the earth that kind of girls exist in the heaven only and those are Angels, so i think i always wish to say you lost your place in heaven and came to earth..!
+          </div>
+        </div>
+      </div>
+      <div class="photo-card">
+        <div class="photo-inner">
+          <div class="photo-front">
+            <img src="IMG_20250516_214130.jpg" alt="Memory 2">
+          </div>
+          <div class="photo-back">
+             These the are yhe eyes that talks a lot even she won't and there are the eyes that am not going to forget ""💖🌸
+          </div>
+        </div>
+      </div>
+      <div class="photo-card">
+        <div class="photo-inner">
+          <div class="photo-front">
+            <img src="she.jpg" alt="Memory 3">
+          </div>
+          <div class="photo-back">
+            She doesn’t know, but when she smiles,
+The world forgets its pain awhile.
+The moon feels shy, the stars all stir,
+For even night is drawn to her. ☀️
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="message-reveal">
+      <h2 style="text-align: center; font-family: 'Great Vibes', cursive;">A Message From My Heart 💌</h2>
+      <p>for the birthday queen Raji,</p>
+      <p>Happy birthday To the person whom could I share everything
+To the person I always to be...with, On this special day, 
+and you are the one whom could i share everything..
+And I can still remember the day I met you the day you text you the day you text me I feel more happy that I've ever feel I’m lucky to have you in my life.</p>
+      <p>Happy Birthday once again! Let’s create more memories together 🎂❤️</p>
+      <p style="text-align: right; font-style: italic;">—from poet</p>
+    </div>
+  </div>
+
+  <canvas class="confetti"></canvas>
+  <canvas class="emoji-blast"></canvas>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    function blastConfetti() {
+      const end = Date.now() + 3000;
+      (function frame() {
+        confetti({
+          particleCount: 7,
+          angle: 60,
+          spread: 55,
+          origin: { x: 0 }
+        });
+        confetti({
+          particleCount: 7,
+          angle: 120,
+          spread: 55,
+          origin: { x: 1 }
+        });
+        if (Date.now() < end) {
+          requestAnimationFrame(frame);
+        }
+      })();
+    }
+
+    function startCelebration() {
+      document.getElementById("intro-screen").style.display = "none";
+      document.getElementById("page-content").style.display = "block";
+      document.getElementById("music-box").style.display = "block";
+      document.getElementById("bg-music").play();
+      blastConfetti();
+    }
+  </script>
+</body>
+</html>
